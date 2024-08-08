@@ -6,6 +6,56 @@
 }
 
 
+/*Config p/ botão de esconder o texto (Seção "About Us')*/
+.text-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#text {
+  overflow: hidden;
+  display: -webkit-box; /* Para navegadores baseados em WebKit */
+  -webkit-box-orient: vertical; /* Para navegadores baseados em WebKit */
+  -webkit-line-clamp: 3; /* Limita a exibição a 3 linhas (com prefixo) */
+  line-clamp: 3; /* Propriedade padrão sem prefixo, para compatibilidade futura */
+  height: 4.5em; /* Ajusta conforme a altura da linha */
+  position: relative;
+  opacity: 1;
+  transition: height 0.3s ease, opacity 0.3s ease; /* Transição suave para altura e opacidade */
+}
+
+#text.expand {
+  height: auto; /* Permite que o texto expanda para mostrar tudo */
+  opacity: 1;
+}
+
+#text.collapse {
+  height: 4.5em; /* Limita a altura a 3 linhas visíveis */
+}
+
+#toggle-button {
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#toggle-button span {
+  font-size: 24px;
+}
+
+
 
 
 /* Todo o seguinte texto veio a partir do código pronto (pode haver alterações, que estarão com comentários) */

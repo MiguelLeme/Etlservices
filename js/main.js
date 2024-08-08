@@ -1,3 +1,22 @@
+//Função para o texto que fica escondido (Seção 'About Us')
+function toggleText() {
+    const text = document.getElementById('text');
+    const button = document.getElementById('toggle-button');
+    
+    if (text.style.height === 'auto') {
+        text.style.display = '-webkit-box';
+        text.style.height = '4.5em';
+        button.innerHTML = '<span>&#9660;</span>';
+    } else {
+        text.style.display = 'block';
+        text.style.height = 'auto';
+        button.innerHTML = '<span>&#9650;</span>';
+    }
+}
+
+
+
+//Todo o seguinte texto veio a partir do código pronto (pode haver alterações, que estarão com comentários)//
  AOS.init({
  	duration: 800,
  	easing: 'slide',
