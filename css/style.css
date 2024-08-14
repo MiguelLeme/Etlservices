@@ -735,14 +735,13 @@ h1, h2, h3, h4, h5,
           .header-bar ul li {
             display: inline-block; } }
         .header-bar ul li a {
-          display: block;
           padding: 4px 0;
           color: #ffffff;
           text-transform: uppercase;
           font-size: .8rem;
           font-weight: 600;
           position: relative;
-          padding-left: 10px; }
+          padding-left: 5px; }
           .header-bar ul li a:before {
             -webkit-transition: .3s all ease;
             -o-transition: .3s all ease;
@@ -770,20 +769,36 @@ h1, h2, h3, h4, h5,
           /*ìcones de instagram e faceboolk adicionados a partir do chat GPT*/
           .social-icons {
             display: flex;
-            justify-content: center;
-            margin-top: 10px;
+            flex-direction: column; /*alinha os ícones em colunas*/
+            justify-content: center;/*alinha à esquerda*/
+            margin-top: 10px;/*adciona espaços em cima dos ícones*/
+            margin-left: -25px;
           }
           
           .social-icons a {
             color: white;
-            font-size: 30px !important;
-            margin: 0 5px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            margin-left: 20px;
             text-decoration: none;
           }
           
-          .social-icons a:hover {
-            color: #ccc;
+          .social-icons a i {
+            font-size: 30px; /* Tamanho específico para os ícones */
+            margin-right: 16px; /* Espaço entre o ícone e o texto */
           }
+
+          .social-icons a:hover {
+            color: #cccc;
+          }
+
+          .social-icons a span {
+            font-size: 12px; /* Tamanho do texto, ajustado para ser menor que o ícone */
+            line-height: 30px;
+          }
+
 
       /*Ícones orignais do código,eu não consegui deixa-los na cor branca*/
       /*
