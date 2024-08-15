@@ -1,4 +1,79 @@
-//Função para o texto que fica escondido (Seção 'About Us')
+//Carrosel (Chat GPT)
+
+const carouselSlide = document.querySelector('.carousel-slide');
+const carouselImages = document.querySelectorAll('.carousel-slide img');
+
+let counter = 0;
+const size = carouselImages[0].clientWidth;
+
+document.querySelector('.next').addEventListener('click', () => {
+	if (counter >= carouselImages.length - 1) return;
+	carouselSlide.style.transition = "transform 0.5s ease-in-out";
+	counter++;
+	carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+	if (counter <= 0) return;
+	carouselSlide.style.transition = "transform 0.5s ease-in-out";
+	counter--;
+	carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+});
+
+// Auto-slide every 5 seconds
+setInterval(() => {
+	if (counter >= carouselImages.length - 1) {
+		counter = -1;
+	}
+	counter++;
+	carouselSlide.style.transition = "transform 0.5s ease-in-out";
+	carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+}, 5000); // 5 segundos
+
+
+
+
+
+//Indicador de imagens do carrosel (GPT)
+const slides = document.querySelectorAll('.carousel-slide img');
+const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+let currentIndex = 0;
+
+function showSlide(index) {
+  const totalSlides = slides.length;
+  if (index >= totalSlides) index = 0;
+  if (index < 0) index = totalSlides - 1;
+  
+  document.querySelector('.carousel-slide').style.transform = `translateX(-${index * 100}%)`;
+
+  indicators.forEach(indicator => indicator.classList.remove('active'));
+  indicators[index].classList.add('active');
+  
+  currentIndex = index;
+}
+
+document.querySelector('.next').addEventListener('click', () => {
+  showSlide(currentIndex + 1);
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  showSlide(currentIndex - 1);
+});
+
+// Avançar automaticamente a cada 5 segundos
+setInterval(() => {
+  showSlide(currentIndex + 1);
+}, 5000); // Ajuste o valor para alterar a frequência de mudança de slides
+
+
+
+
+
+
+
+
+
+//Função para o texto que fica escondido (Seção 'About Us') Chat GPT
 function toggleText() {
     const text = document.getElementById('text');
     const button = document.getElementById('toggle-button');
@@ -13,6 +88,67 @@ function toggleText() {
         button.innerHTML = '<span>&#9650;</span>';
     }
 }
+
+
+ // Função para gerar um tempo aleatório dentro do intervalo especificado (0 dias e 1 hora a 3 dias)
+ function getRandomTime() {
+    const minHours = 1; // Mínimo de 1 hora
+    const maxDays = 3;  // Máximo de 3 dias
+    const maxHours = maxDays * 24; // Máximo em horas
+
+    const minTime = minHours * 60 * 60 * 1000; // 1 hora em milissegundos
+    const maxTime = maxHours * 60 * 60 * 1000; // 3 dias em milissegundos
+
+    return Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
+  }
+
+  function startCountdown() {
+    const endTime = Date.now() + getRandomTime();
+    localStorage.setItem('endTime', endTime);
+
+    function updateCountdown() {
+      const now = Date.now();
+      const timeLeft = endTime - now;
+
+      if (timeLeft <= 0) {
+        startCountdown(); // Reinicia a contagem se o tempo acabar
+        return;
+      }
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
+    }
+
+    // Atualiza o cronômetro a cada segundo
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  }
+
+  // Verifica se há um tempo de término salvo e inicia a contagem regressiva
+  window.onload = function() {
+    const savedEndTime = localStorage.getItem('endTime');
+    if (savedEndTime) {
+      const now = Date.now();
+      if (now > savedEndTime) {
+        startCountdown(); // Reinicia a contagem se o tempo salvo tiver expirado
+      } else {
+        const endTime = parseInt(savedEndTime, 10);
+        localStorage.setItem('endTime', endTime);
+        startCountdown();
+      }
+    } else {
+      startCountdown();
+    }
+  };
+
+
 
 
 
