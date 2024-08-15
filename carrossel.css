@@ -1,8 +1,8 @@
 /*Carrosel de imagens (Chat GPT)*/
 
 .carousel-container {
-    width: 100%;
-    height: 200px;
+    width: 100%; /*Define a largura do carrossel*/
+    height: 300px;  /*Define a altura do carrossel*/
     position: relative;
     overflow: hidden;
   }
@@ -10,7 +10,6 @@
   .carousel-slide {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    flex-shrink: 0; /* Garante que as imagens não encolham */
     max-width: 100%; /* Garante que as imagens não excedam a largura do carrossel */
   }
 
@@ -20,8 +19,9 @@
   }
 
   .carousel-slide img {
-    width: 100%;
-    height: auto;
+    width: 100%;  /* Reduz a largura das imagens para 100% do contêiner */
+    height: 100%; /* A altura da imagem se ajusta ao contêiner */
+    object-fit: cover; /* Garante que as imagens sejam recortadas para preencher o contêiner sem distorção */
   }
 
   .prev, .next {
