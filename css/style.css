@@ -1,3 +1,102 @@
+/*Carrosel de imagens (Chat GPT)*/
+
+.carousel-container {
+  width: 1000px; /*Define a largura do carrossel*/
+  height: 250px;  /*Define a altura do carrossel*/
+  margin-left: 45px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: 100%; /* Garante que as imagens não excedam a largura do carrossel */
+}
+
+/* Novo CSS */
+.carousel-container.paused .carousel-slide {
+  transition: none; /* Remove a transição quando o mouse está sobre o carrossel */
+}
+
+.carousel-slide img {
+  object-fit: cover; /* Garante que as imagens sejam recortadas para preencher o contêiner sem distorção */
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 16px; /* Aumenta o tamanho da fonte dos ícones dos botões */
+  width: 30px; /* Define a largura dos botões */
+  height: 30px; /* Define a altura dos botões */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente o texto dentro do botão */
+  justify-content: center; /* Centraliza horizontalmente o texto dentro do botão */
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 50%; /* Torna os botões circulares */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo para os indicadores */
+.carousel-indicators {
+position: absolute;
+bottom: 10px; /* Espaçamento do fundo do carrossel */
+left: 37%; /* Centraliza horizontalmente */
+transform: translateX(-50%);  /* Ajusta a posição para o centro */
+display: flex;
+gap: 5px; /* Espaçamento entre os indicadores */
+}
+
+.carousel-indicators .indicator {
+width: 30px; /* Largura do retângulo */
+height: 5px; /* Altura do retângulo */
+background-color: #ddd; /* Cor padrão dos indicadores */
+border-radius: 3px; /* Bordas arredondadas */
+transition: background-color 0.3s ease; /* Transição suave da cor */
+}
+
+.carousel-indicators .indicator.active {
+background-color: #333; /* Cor do indicador ativo */
+}
+
+/* Estilo para o cronômetro */
+.countdown {
+position: absolute;
+bottom: 10px; /* Ajuste a posição conforme necessário */
+right: 10px; /* Ajuste a posição conforme necessário */
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+padding: 10px;
+border-radius: 5px;
+font-size: 16px;
+display: flex;
+gap: 5px;
+align-items: center;
+}
+
+.countdown span {
+font-weight: bold;
+}
+
+
 /*Mapa de Orlando (Video no Youtube - Canal ResolvendoBug)*/
 .mapBox{
   position: relative;
