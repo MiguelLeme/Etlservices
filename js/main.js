@@ -64,11 +64,6 @@ setInterval(() => {
 
 
 
-
-
-
-
-
 //Função para o texto que fica escondido (Seção 'About Us') Chat GPT
 function toggleText() {
     const text = document.getElementById('text');
@@ -97,8 +92,7 @@ function toggleText() {
 
     return Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
   }
-
-  function startCountdown() {
+function startCountdown() {
     const endTime = Date.now() + getRandomTime();
     localStorage.setItem('endTime', endTime);
 
@@ -120,6 +114,9 @@ function toggleText() {
       document.getElementById('hours').textContent = hours;
       document.getElementById('minutes').textContent = minutes;
       document.getElementById('seconds').textContent = seconds;
+
+	  // Atualiza o tempo restante no localStorage
+	  saveTimeRemaining(timer);
     }
 
     // Atualiza o cronômetro a cada segundo
@@ -144,6 +141,11 @@ function toggleText() {
     }
   };
 
+    // Função para salvar o tempo restante no localStorage
+    function saveTimeRemaining(timeRemaining) {
+        localStorage.setItem('timeRemaining', timeRemaining);
+        localStorage.setItem('endTime', new Date().getTime() + timeRemaining);
+    }
 
 
 
