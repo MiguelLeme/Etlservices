@@ -1,5 +1,64 @@
-/*Carrosel de imagens (Chat GPT)*/
+/*Painel de imagens (chat GPT)*/
 
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Três colunas de tamanho igual */
+  grid-template-rows: repeat(2, 1fr); /* Duas linhas de tamanho igual */
+  gap: 20px; /* Espaço entre as imagens */
+  max-width: 1000px; /* Ajuste conforme necessário */
+  /*margin: 0 auto; /* Centraliza o painel na página */
+  margin-left: -240px;
+  margin-top: 100px;
+}
+
+.image-item {
+  position: relative;
+  overflow: hidden;
+  width: 300px; /* Preenche completamente o espaço da célula */
+  height: 300px; /* Aumente conforme necessário */
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra completamente o espaço */
+  border-radius: 10px; /* Bordas arredondadas, opcional */
+}
+
+.image-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para destacar o texto e o ícone */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-item:hover .overlay {
+  opacity: 1;
+}
+
+.image-item .overlay span {
+  margin: 0;
+  font-size: 40px;
+}
+
+.image-item .overlay i {
+  font-size: 32px; /* Aumenta o tamanho do ícone */
+  margin-top: 10px;
+}
+
+
+
+
+/*Carrosel de imagens (Chat GPT)*/
 .carousel-container {
   width: 1000px; /*Define a largura do carrossel*/
   height: 250px;  /*Define a altura do carrossel*/
