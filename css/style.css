@@ -345,13 +345,7 @@ font-weight: bold;
 
 
 /* Todo o seguinte texto veio a partir do código pronto (pode haver alterações, que estarão com comentários) */
-body {
-  margin: 0;
-  height: 100vh; /* Altura total da viewport */
-  display: flex;
-  justify-content: center; /* Centraliza o conteúdo horizontalmente */
-  align-items: center; /* Centraliza o conteúdo verticalmente */
-
+body {  
   line-height: 1.7;
   color: #000;
   font-weight: 400;
