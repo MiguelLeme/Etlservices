@@ -76,9 +76,8 @@ body {
 /* Painel de imagens (chat GPT) */
 .image-grid-container {
   display: flex;
-  justify-content: center; /* Centraliza o grid horizontalmente */
   padding: 20px; /* Espaço ao redor do grid */
-  box-sizing: border-box; /* Inclui padding na largura total */
+  margin-left: -300px;
 }
 
 .image-grid {
@@ -347,6 +346,12 @@ font-weight: bold;
 
 /* Todo o seguinte texto veio a partir do código pronto (pode haver alterações, que estarão com comentários) */
 body {
+  margin: 0;
+  height: 100vh; /* Altura total da viewport */
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+
   line-height: 1.7;
   color: #000;
   font-weight: 400;
