@@ -175,7 +175,27 @@ body {
   margin-top: 10px;
 }
 
+@media (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr; /* Uma coluna para celulares */
+    grid-template-rows: auto; /* Ajusta a quantidade de linhas conforme necessário */
+    gap: 10px; /* Reduz o espaço entre as imagens */
+    margin-left: 320px;
+  }
 
+  .image-item {
+    width: 100%; /* Largura total da tela */
+    height: 200px; /* Tamanho menor para a imagem */
+  }
+
+  .image-item .overlay span {
+    font-size: 24px; /* Ajusta o tamanho do texto */
+  }
+
+  .image-item .overlay i {
+    font-size: 20px; /* Reduz ainda mais o tamanho do ícone */
+  }
+}
 
 
 /*Carrosel de imagens (Chat GPT)*/
@@ -278,6 +298,67 @@ align-items: center;
 font-weight: bold;
 }
 
+/* Responsividade para tablets (largura menor que 768px) */
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 90vw; /* Ajusta a largura do carrossel para tablets */
+    height: 400px; /* Reduz a altura */
+  }
+
+  .prev, .next {
+    font-size: 14px; /* Ajusta o tamanho dos botões */
+    width: 25px; /* Reduz a largura dos botões */
+    height: 25px; /* Reduz a altura dos botões */
+  }
+
+  .carousel-indicators {
+    bottom: 8px; /* Ajusta o espaçamento */
+    gap: 3px; /* Reduz o espaço entre os indicadores */
+  }
+
+  .carousel-indicators .indicator {
+    width: 25px; /* Reduz a largura dos indicadores */
+    height: 4px; /* Reduz a altura dos indicadores */
+  }
+
+  .countdown {
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    padding: 8px;
+  }
+}
+
+/* Responsividade para celulares (largura menor que 480px) */
+@media (max-width: 480px) {
+  .carousel-container {
+    width: 90vw; /* Carrossel ocupa a largura total da tela */
+    height: 200px; /* Reduz a altura para caber em celulares */
+  }
+
+  .carousel-slide img { 
+      width: 100%;
+  }
+
+  .prev, .next {
+    font-size: 12px; /* Reduz ainda mais o tamanho dos botões */
+    width: 20px; /* Reduz a largura dos botões */
+    height: 20px; /* Reduz a altura dos botões */
+  }
+
+  .carousel-indicators {
+    bottom: 5px; /* Ajusta o espaçamento */
+    gap: 2px; /* Espaçamento menor entre os indicadores */
+  }
+
+  .carousel-indicators .indicator {
+    width: 20px; /* Reduz a largura dos indicadores */
+    height: 3px; /* Reduz a altura dos indicadores */
+  }
+
+  .countdown {
+    font-size: 12px; /* Fonte menor para dispositivos móveis */
+    padding: 6px;
+  }
+}
 
 /*Mapa de Orlando (Video no Youtube - Canal ResolvendoBug)*/
 .mapBox{margin-top: 50px;
@@ -321,6 +402,50 @@ font-weight: bold;
   flex-direction: column; /* Coloca o texto em colunas */
 }
 
+/* Responsividade para tablets (largura menor que 768px) */
+@media (max-width: 768px) {
+  .mapBox {
+    width: 100%; /* Ajusta a largura do mapa para preencher a tela */
+    height: 400px; /* Reduz a altura do mapa para tablets */
+  }
+
+  .contact-item {
+    flex-direction: column; /* Coloca os ícones e texto em coluna */
+    align-items: flex-start; /* Alinha os itens ao início */
+    margin: 20px; /* Reduz a margem */
+  }
+
+  .contact-item i {
+    font-size: 32px; /* Reduz o tamanho do ícone para tablets */
+  }
+
+  .contact-item h2 {
+    font-size: 28px; /* Reduz o tamanho do texto */
+  }
+}
+
+/* Responsividade para celulares (largura menor que 480px) */
+@media (max-width: 480px) {
+  .mapBox {
+    width: 100%; /* Largura total da tela */
+    height: 300px; /* Altura menor para o mapa */
+  }
+
+  .contact-item {
+    margin: 15px; /* Margens menores para celulares */
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-item i {
+    font-size: 48px; /* Reduz ainda mais o tamanho do ícone */
+    margin-bottom: 32px;
+  }
+
+  .contact-item h2 {
+    font-size: 28px; /* Ajuste de tamanho do texto para celulares */
+  }
+}
 
 
 /*Configuração da imagem no topo da página*/
