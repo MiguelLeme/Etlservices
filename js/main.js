@@ -61,8 +61,75 @@ setInterval(() => {
   showSlide(currentIndex + 1);
 }, 5000); // Ajuste o valor para alterar a frequência de mudança de slides
 
+//Troca para a imagem menor em telas pequenas (responsividade)
+function checkScreenSize() {
+    const img1 = document.getElementById('image1');
+    const img2 = document.getElementById('image2');
+    const img3 = document.getElementById('image3');
+
+    if (window.innerWidth <= 480) {
+      img1.src = './images/image1_small.png';
+      img2.src = './images/image2_small.png';
+      img3.src = './images/image3_small.png';
+    } else {
+      img1.src = './images/1.png';
+      img2.src = './images/2.png';
+      img3.src = './images/3.png';
+    }
+  }
+
+  window.addEventListener('resize', checkScreenSize);
+  window.addEventListener('load', checkScreenSize);
 
 
+
+  //Função para coíar textos (email e telefone)
+  function copyToClipboard(event, textId) {
+	// Impede que o evento de clique se propague para o contêiner da div
+	event.stopPropagation();
+  
+	// Selecione o texto dentro do elemento especificado pelo ID
+	var text = document.getElementById(textId).innerText;
+  
+	// Crie um elemento temporário para copiar o texto
+	var tempInput = document.createElement("input");
+	tempInput.value = text;
+	document.body.appendChild(tempInput);
+  
+	// Selecione o texto no elemento temporário
+	tempInput.select();
+	document.execCommand("copy");
+  
+	// Remova o elemento temporário
+	document.body.removeChild(tempInput);
+  
+	// Opcional: Mostrar uma mensagem de confirmação
+	alert("Texto copiado para a área de transferência!");
+  }
+
+  function copyLocationToClipboard() {
+	// Selecione o texto dentro do elemento <h2> com id 'location-text'
+	var text = document.getElementById("location-text").innerText;
+  
+	// Crie um elemento temporário para copiar o texto
+	var tempInput = document.createElement("input");
+	tempInput.value = text;
+	document.body.appendChild(tempInput);
+  
+	// Selecione o texto no elemento temporário
+	tempInput.select();
+	document.execCommand("copy");
+  
+	// Remova o elemento temporário
+	document.body.removeChild(tempInput);
+  
+	// Opcional: Mostrar uma mensagem de confirmação
+	alert("Texto copiado para a área de transferência!");
+  }
+  
+  
+  
+  
 
 //Função para o texto que fica escondido (Seção 'About Us') Chat GPT
 function toggleText() {

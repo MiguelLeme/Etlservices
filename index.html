@@ -111,15 +111,11 @@
       <!--Inicio do carrossel GPT)-->
       <div class="carousel-container">
         <div class="carousel-slide">
-          <!--Tentando arrumar responsividade do carrossel-
-          <source srcset="./images/1png" media="(min-width: 480px)">
-            <source srcset="./images/image1_small.png" media="(max-width: 479px)">
-        -->
-            <img src="./images/1.png" alt="Image 1">
+            <img src="./images/1.png" alt="Image 1" id="image1">
 
-            <img src="./images/2.png" alt="Image 2">
+            <img src="./images/2.png" alt="Image 2" id="image2">
             
-            <img src="./images/3.png" alt="Image 3">
+            <img src="./images/3.png" alt="Image 3" id="image3">
         </div>
     
         <button class="prev">&#10094;</button>
@@ -533,29 +529,37 @@
             <div class="row justify-content-center">
               <div class="col-md-8">
                 <h2 class="heading">Contact</h2>
-                <div class="contact-item">
+                <div class="contact-item" onclick="window.open('mailto:etlservices24@gmail.com', '_blank');">
                   <i class="fas fa-envelope"></i>
-                  <h2>etlservices24@gmail.com</h2>
+                  <h2 id="contact-text">etlservices24@gmail.com</h2>
+                  <i class="fas fa-copy" id="copy-icon" onclick="copyToClipboard(event)"></i>              
                 </div>
+                </a>
 
-                <div class="contact-item">
+                <div class="contact-item" onclick="window.open('tel:+14078601104');">
                   <i class="fas fa-phone"></i>
-                  <h2>+1 (407) 860-1104</h2>
+                  <h2 id="phone-text">+1 (407) 860-1104</h2>
+                  <i class="fas fa-copy" id="copy-icon" onclick="copyToClipboard(event, 'phone-text')"></i> <!-- Ícone de copiar -->
                 </div>
 
                 <div class="contact-item">
                   <i class="fa-solid fa-location-dot"></i>
-                  <h2>Orlando Region</h2>
+                  <h2 id="location-text">Rd Kirkman</h2>
+                  <i class="fa-solid fa-copy" id="copy-location-icon" onclick="copyLocationToClipboard()"></i>
+                </div>
+
+                <div class="info-box">
+                  <h2>We serve the entire Orlando region!</h2>
                 </div>
 
                 <form action="#">
-
                   <div class="mapBox">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224399.20817193034!2d-81.49100021675166!3d28.502497513492905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C%20Fl%C3%B3rida%2C%20EUA!5e0!3m2!1sen!2sus!4v1723675972929!5m2!1sen!2sus"
                       style="border:0;" allowfullscreen="" loading="lazy"
                       referrerpolicy="no-referrer-when-downgrade"></iframe>
                   </div>
+                </form>
                   
                   <!--Fim da seção 'Contato' (adcionado)-->
 

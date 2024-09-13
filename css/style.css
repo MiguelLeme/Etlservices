@@ -6,7 +6,7 @@ body {
 .background {
   position: relative;
   width: 100%;
-  height: 600px; /* Ajusta a altura com base na imagem */
+  height: 100vw; /* Ajusta a altura com base na imagem */
   overflow: hidden; /* Garante que a imagem não saia do contêiner */
 }
 
@@ -47,9 +47,10 @@ body {
 /* Estilo para o logo da empresa */
 .logo-container {
   width: 200px;
+  height: auto;
   position: absolute;
   top: 40px; /* Ajuste a posição conforme necessário */
-  left: 15%;
+  left: 13%;
   z-index: 2; /* Garante que o logo fique acima do overlay */
   text-align: center;
 }
@@ -63,7 +64,7 @@ body {
 @media (max-width: 768px) {
   .logo-container {
     top: 20px; /* Ajusta a posição do logo em telas menores */
-    left: 50%; /* Centraliza o logo horizontalmente */
+    left: 48%; /* Centraliza o logo horizontalmente */
     transform: translateX(-50%); /* Mantém o logo centralizado */
   }
 
@@ -332,10 +333,13 @@ font-weight: bold;
   .carousel-container {
     width: 90vw; /* Carrossel ocupa a largura total da tela */
     height: 200px; /* Reduz a altura para caber em celulares */
+    overflow: hidden;
   }
 
   .carousel-slide img { 
       width: 100%;
+      height: 100%;
+      object-fit: cover;
   }
 
   .prev, .next {
@@ -363,7 +367,7 @@ font-weight: bold;
 /*Mapa de Orlando (Video no Youtube - Canal ResolvendoBug)*/
 .mapBox{margin-top: 50px;
   position: relative;
-  width: 600px;
+  width: 640px;
   height: 500px;
   background: #fff;
 }
@@ -377,24 +381,91 @@ font-weight: bold;
 
 .heading {
   text-align: center;
+  transition: color 0.3s ease; /* Transição suave para a mudança de cor */
 }
+
+.heading:hover {
+  color: red; /* Cor do texto quando o mouse está sobre ele */
+}
+
 .contact-item {
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra da caixa */
   display: flex;
   align-items: center;
   margin-bottom: 10px; /* Espaço entre os itens */
-  margin: 30px;
+  margin: 30px 0;
   margin-left: 0px;
+  transition: border-color 0.3s ease; /* Transição suave para a mudança de cor */
+  position: relative; /* Necessário para posicionar o ícone de copiar */
+}
+
+.contact-link {
+  display: flex; /* Faz o link ocupar toda a área da <div> */
+  text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.contact-item a {
+  color: inherit;
+  display: flex;
+}
+.contact-item:hover {
+  border-color: #1e90ff; /* Cor da borda ao passar o mouse (azul claro) */
 }
 
 .contact-item i {
+  color: #000;
   margin-right: 12px; /* Espaço entre o ícone e o texto */
   font-size: 40px; /* Ajuste o tamanho do ícone conforme necessário */
+  transition: color 0.3s ease; /* Transição suave para a mudança de cor */
+  cursor: pointer; /* Mostra que o ícone é clicável */
 }
+
+.contact-item:hover i {
+  color: #007BFF; /* Cor do ícone quando o usuário passa o mouse */
+}
+
+.contact-item .fa-copy {
+  position: absolute; /* Permite o posicionamento exato */
+  right: 10px; /* Alinha o ícone de copiar ao lado direito */
+  font-size: 20px; /* Ajuste o tamanho do ícone se necessário */
+  cursor: pointer; /* Mostra que o ícone é clicável */
+}
+
+
+#copy-icon {
+  color: #8d8d8d; /* Cor do ícone de copiar */
+  font-size: 32px;
+  margin-left: 100px; /* Espaçamento entre o ícone de copiar e o texto */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#copy-icon:hover {
+  color: #383838; /* Cor do ícone quando o usuário passa o mouse */
+}
+
+
+#copy-location-icon {
+  color: #8d8d8d; /* Cor do ícone de copiar */
+  font-size: 32px;
+  margin-left: 10px; /* Espaçamento entre o ícone de copiar e o texto */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#copy-location-icon:hover {
+  color: #383838; /* Cor do ícone quando o usuário passa o mouse */
+}
+
 
 .contact-item h2 {
   margin: 0;
   font-size: 32px; /* Tamanho menor para o e-mail */
   color: #555; /* Cor opcional para diferenciar o texto */
+  cursor: pointer; /* Mostra que o ícone é clicável */
 }
 
 .contact-details {
@@ -443,9 +514,23 @@ font-weight: bold;
   }
 
   .contact-item h2 {
-    font-size: 28px; /* Ajuste de tamanho do texto para celulares */
+    font-size: 24px; /* Ajuste de tamanho do texto para celulares */
   }
 }
+
+.info-box {
+  margin-top: 100px;
+  border-radius: 8px; /* Bordas arredondadas */
+  text-align: center; 
+  margin-bottom: -30px;
+}
+
+.info-box p {
+  margin: 0;
+  font-size: 21px;  /* Tamanho do texto */
+  color: #333; /* Cor do texto */
+}
+
 
 
 /*Configuração da imagem no topo da página*/
