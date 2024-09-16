@@ -529,24 +529,27 @@
             <div class="row justify-content-center">
               <div class="col-md-8">
                 <h2 class="heading">Contact</h2>
+
                 <div class="contact-item" onclick="window.open('mailto:etlservices24@gmail.com', '_blank');">
                   <i class="fas fa-envelope"></i>
                   <h2 id="contact-text">etlservices24@gmail.com</h2>
-                  <i class="fas fa-copy" id="copy-icon" onclick="copyToClipboard(event)"></i>              
+                  <i class="fas fa-copy" id="copy-icon" onclick="copyToClipboard(event, 'contact-text')"></i>              
                 </div>
-                </a>
-
+                
                 <div class="contact-item" onclick="window.open('tel:+14078601104');">
                   <i class="fas fa-phone"></i>
                   <h2 id="phone-text">+1 (407) 860-1104</h2>
-                  <i class="fas fa-copy" id="copy-icon" onclick="copyToClipboard(event, 'phone-text')"></i> <!-- Ícone de copiar -->
+                  <i class="fas fa-copy" id="copy-icon" onclick="copyToClipboard(event, 'phone-text')"></i>
                 </div>
-
+                
                 <div class="contact-item">
-                  <i class="fa-solid fa-location-dot"></i>
-                  <h2 id="location-text">Rd Kirkman</h2>
-                  <i class="fa-solid fa-copy" id="copy-location-icon" onclick="copyLocationToClipboard()"></i>
+                  <a href="https://maps.app.goo.gl/YoEeXMHiru3RF9qJA" target="_blank" style="text-decoration: none; color: inherit;">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h2 id="location-text">Rd Kirkman</h2>
+                  </a>
+                  <i class="fa-solid fa-copy" id="copy-location-icon" onclick="copyToClipboard(event, 'location-text')"></i>
                 </div>
+                
 
                 <div class="info-box">
                   <h2>We serve the entire Orlando region!</h2>

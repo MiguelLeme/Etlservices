@@ -83,50 +83,34 @@ function checkScreenSize() {
 
 
 
-  //Função para coíar textos (email e telefone)
+  // Função para copiar o texto (email) ao clicar no ícone de copiar
   function copyToClipboard(event, textId) {
-	// Impede que o evento de clique se propague para o contêiner da div
-	event.stopPropagation();
-  
-	// Selecione o texto dentro do elemento especificado pelo ID
-	var text = document.getElementById(textId).innerText;
-  
-	// Crie um elemento temporário para copiar o texto
-	var tempInput = document.createElement("input");
-	tempInput.value = text;
-	document.body.appendChild(tempInput);
-  
-	// Selecione o texto no elemento temporário
-	tempInput.select();
-	document.execCommand("copy");
-  
-	// Remova o elemento temporário
-	document.body.removeChild(tempInput);
-  
-	// Opcional: Mostrar uma mensagem de confirmação
-	alert("Texto copiado para a área de transferência!");
+    // Impede que o evento de clique se propague para o contêiner da div
+    event.stopPropagation();
+
+    // Selecione o texto dentro do elemento especificado pelo ID
+    var text = document.getElementById(textId).innerText;
   }
 
-  function copyLocationToClipboard() {
-	// Selecione o texto dentro do elemento <h2> com id 'location-text'
-	var text = document.getElementById("location-text").innerText;
+  function copyToClipboard(event, elementId) {
+	event.stopPropagation(); // Impede a abertura do e-mail ou telefone ao clicar no ícone de copiar
+	var text = document.getElementById(elementId).innerText;
   
-	// Crie um elemento temporário para copiar o texto
+	// Cria um elemento temporário para copiar o texto
 	var tempInput = document.createElement("input");
 	tempInput.value = text;
 	document.body.appendChild(tempInput);
   
-	// Selecione o texto no elemento temporário
+	// Seleciona e copia o texto
 	tempInput.select();
 	document.execCommand("copy");
   
-	// Remova o elemento temporário
+	// Remove o elemento temporário
 	document.body.removeChild(tempInput);
   
 	// Opcional: Mostrar uma mensagem de confirmação
 	alert("Texto copiado para a área de transferência!");
   }
-  
   
   
   
