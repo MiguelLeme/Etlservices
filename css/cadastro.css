@@ -57,6 +57,7 @@ form {
     background-color: #555;
   }
   
+  
   /* Estilo para os campos obrigatórios */
   label::after {
     content: " *";
