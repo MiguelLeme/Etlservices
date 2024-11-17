@@ -68,13 +68,13 @@ function checkScreenSize() {
     const img3 = document.getElementById('image3');
 
     if (window.innerWidth <= 480) {
-      img1.src = './images/image1_small.png';
-      img2.src = './images/image2_small.png';
-      img3.src = './images/image3_small.png';
+      img1.src = '/frontend/images/image1_small.png';
+      img2.src = '/frontend/images/image2_small.png';
+      img3.src = '/frontend/images/image3_small.png';
     } else {
-      img1.src = './images/1.png';
-      img2.src = './images/2.png';
-      img3.src = './images/3.png';
+      img1.src = '/frontend/images/1.png';
+      img2.src = '/frontend/images/2.png';
+      img3.src = '/frontend/images/3.png';
     }
   }
 
