@@ -1,0 +1,24 @@
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #003366; /* Azul escuro */
+    color: #ffffff; /* Texto em branco */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease; 
+}
+
+.register-link a:hover {
+    background-color: #002244; /* Azul ainda mais escuro ao passar o mouse */
+}
+
+.employe a{
+    color: black;
+    border-color: #002244;
+}

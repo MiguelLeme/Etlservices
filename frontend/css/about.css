@@ -1,0 +1,179 @@
+/*Mapa de Orlando (Video no Youtube - Canal ResolvendoBug)*/
+.mapBox{margin-top: 50px;
+    position: relative;
+    width: 640px;
+    height: 500px;
+    background: #fff;
+}  
+.mapBox iframe{
+    width: 100%;
+    height: 100%;
+}   /*Configuração para ícones em About Us*/  
+.heading {
+    text-align: center;
+    transition: color 0.3s ease; /* Transição suave para a mudança de cor */
+}  
+.heading:hover {
+    color: red; /* Cor do texto quando o mouse está sobre ele */
+}  
+.contact-item {
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra da caixa */
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espaço entre os itens */
+    margin: 30px 0;
+    margin-left: 0px;
+    transition: border-color 0.3s ease; /* Transição suave para a mudança de cor */
+    position: relative; /* Necessário para posicionar o ícone de copiar */
+}  
+.contact-link {
+    display: flex; /* Faz o link ocupar toda a área da <div> */
+    text-decoration: none; /* Remove o sublinhado do link */
+}  
+.contact-item a {
+    color: inherit;
+    display: flex;
+}
+.contact-item:hover {
+    border-color: #1e90ff; /* Cor da borda ao passar o mouse (azul claro) */
+}
+.contact-item i {
+    color: #000;
+    margin-right: 12px; /* Espaço entre o ícone e o texto */
+    font-size: 40px; /* Ajuste o tamanho do ícone conforme necessário */
+    transition: color 0.3s ease; /* Transição suave para a mudança de cor */
+    cursor: pointer; /* Mostra que o ícone é clicável */
+}  
+.contact-item:hover i {
+    color: #007BFF; /* Cor do ícone quando o usuário passa o mouse */
+}  
+.contact-item .fa-copy {
+    position: absolute; /* Permite o posicionamento exato */
+    right: 10px; /* Alinha o ícone de copiar ao lado direito */
+    font-size: 20px; /* Ajuste o tamanho do ícone se necessário */
+    cursor: pointer; /* Mostra que o ícone é clicável */
+}   
+#copy-icon {
+    color: #8d8d8d; /* Cor do ícone de copiar */
+    font-size: 32px;
+    margin-left: 100px; /* Espaçamento entre o ícone de copiar e o texto */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}  
+#copy-icon:hover {
+    color: #383838; /* Cor do ícone quando o usuário passa o mouse */
+}   
+#copy-location-icon {
+    color: #8d8d8d; /* Cor do ícone de copiar */
+    font-size: 32px;
+    margin-left: 10px; /* Espaçamento entre o ícone de copiar e o texto */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}  
+#copy-location-icon:hover {
+    color: #383838; /* Cor do ícone quando o usuário passa o mouse */
+}   
+.contact-item h2 {
+    margin: 0;
+    font-size: 32px; /* Tamanho menor para o e-mail */
+    color: #555; /* Cor opcional para diferenciar o texto */
+    cursor: pointer; /* Mostra que o ícone é clicável */
+}  
+.contact-details {
+    display: flex;
+    flex-direction: column; /* Coloca o texto em colunas */
+}  
+  /* Responsividade para tablets (largura menor que 768px) */
+@media (max-width: 768px) {
+    .mapBox {
+      width: 100%; /* Ajusta a largura do mapa para preencher a tela */
+      height: 400px; /* Reduz a altura do mapa para tablets */
+    }  
+    .contact-item {
+      flex-direction: column; /* Coloca os ícones e texto em coluna */
+      align-items: flex-start; /* Alinha os itens ao início */
+      margin: 20px; /* Reduz a margem */
+    }  
+    .contact-item i {
+      font-size: 32px; /* Reduz o tamanho do ícone para tablets */
+    }
+    .contact-item h2 {
+      font-size: 28px; /* Reduz o tamanho do texto */
+    }
+}  
+  /* Responsividade para celulares (largura menor que 480px) */
+@media (max-width: 480px) {
+    .mapBox {
+      width: 100%; /* Largura total da tela */
+      height: 300px; /* Altura menor para o mapa */
+    }  
+    .contact-item {
+      margin: 15px; /* Margens menores para celulares */
+        align-items: center;
+    text-align: center;
+}  
+    .contact-item i {
+      font-size: 48px; /* Reduz ainda mais o tamanho do ícone */
+      margin-bottom: 32px;
+    }  
+    .contact-item h2 {
+      font-size: 24px; /* Ajuste de tamanho do texto para celulares */
+    }
+}  
+.info-box {
+    margin-top: 100px;
+    border-radius: 8px; /* Bordas arredondadas */
+    text-align: center; 
+    margin-bottom: -30px;
+}  
+.info-box p {
+    margin: 0;
+    font-size: 21px;  /* Tamanho do texto */
+    color: #333; /* Cor do texto */
+}     
+/*Config p/ botão de esconder o texto (Seção "About Us')*/
+.text-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}  
+#text {
+    overflow: hidden;
+    display: -webkit-box; /* Para navegadores baseados em WebKit */
+    -webkit-box-orient: vertical; /* Para navegadores baseados em WebKit */
+    -webkit-line-clamp: 3; /* Limita a exibição a 3 linhas (com prefixo) */
+    line-clamp: 3; /* Propriedade padrão sem prefixo, para compatibilidade futura */
+    height: 4.5em; /* Ajusta conforme a altura da linha */
+    position: relative;
+    opacity: 1;
+    transition: height 0.3s ease, opacity 0.3s ease; /* Transição suave para altura e opacidade */
+}  
+#text.expand {
+    height: auto; /* Permite que o texto expanda para mostrar tudo */
+    opacity: 1;
+}
+#text.collapse {
+    height: 4.5em; /* Limita a altura a 3 linhas visíveis */
+}  
+#toggle-button {
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}  
+#toggle-button span {
+    font-size: 24px;
+}    
